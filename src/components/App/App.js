@@ -1,7 +1,12 @@
+import GlobalStyle from "../../styles/GlobalStyle";
+
+import Header from "../Header/Header";
+
 function App() {
   return (
     <div className="App">
-        app
+      <GlobalStyle />
+        <Header />
     </div>
   );
 }
