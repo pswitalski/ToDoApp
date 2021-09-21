@@ -1,9 +1,9 @@
 import React from "react";
 import { StyledButton } from "./Button.style";
 
-function Button({text, secondary, onClick, type}) {
+function Button({text, secondary, onClick, type, bottom}) {
     return(
-        <StyledButton type={type} secondary={secondary} onClick={onClick} >
+        <StyledButton type={type} secondary={secondary} onClick={onClick} bottom={bottom} >
             {text}
         </StyledButton>
     )

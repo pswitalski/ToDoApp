@@ -49,11 +49,29 @@ function App() {
     setSettingsModalOpen(false);
   }
 
+  const [doneTasks, setDoneTasks] = useState([]);
+
+  const handleMoveTaskToDone = (taskId) => {
+    const task = tasksList.find(task => task.taskId === taskId)
+    const currentDoneTasks = [...doneTasks];
+    const newDoneTasks = [task, ...currentDoneTasks];
+    setDoneTasks(newDoneTasks);
+    handleDeleteTask(taskId);
+  }
+
+  const handleClearDoneTasks = () => {
+    setDoneTasks([]);
+  }
+
+  const handleClearTasksList = () => {
+    setTasksList([]);
+  }
+
   return (
     <StyledApp className="App" darkTheme={darkTheme} >
       <GlobalStyle />
         <Header handleToggleTaskOpen={handleToggleTaskOpen} handleAddTaskClose={handleAddTaskClose} handleSettingsOpen={handleSettingsOpen} handleSettingsClose={handleSettingsClose} darkTheme={darkTheme} />
-        <Main tasksList={tasksList} handleDeleteTask={handleDeleteTask} darkTheme={darkTheme} />
+        <Main tasksList={tasksList} handleDeleteTask={handleDeleteTask} darkTheme={darkTheme} doneTasks={doneTasks} handleMoveTaskToDone={handleMoveTaskToDone} handleClearDoneTasks={handleClearDoneTasks} handleClearTasksList={handleClearTasksList} />
 
         {addTaskOpen ? <AddTask nextTaskId={nextTaskId} handleAddTaskClose={handleAddTaskClose} handleAddNewTask={handleAddNewTask} darkTheme={darkTheme} /> : null}
 

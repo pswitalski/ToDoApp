@@ -3,11 +3,11 @@ import { StyledMain } from "./Main.style";
 import TasksList from "./TasksList/TasksList";
 import Aside from "./Aside/Aside";
 
-function Main({tasksList, handleDeleteTask, darkTheme}) {
+function Main({tasksList, handleDeleteTask, darkTheme, doneTasks, handleMoveTaskToDone, handleClearTasksList, handleClearDoneTasks}) {
     return(
         <StyledMain >
-            <Aside />
-            <TasksList tasksList={tasksList} handleDeleteTask={handleDeleteTask} darkTheme={darkTheme} />
+            <TasksList tasksList={tasksList} handleDeleteTask={handleDeleteTask} darkTheme={darkTheme} handleMoveTaskToDone={handleMoveTaskToDone} handleClearTasksList={handleClearTasksList} />
+            <Aside doneTasks={doneTasks} handleClearDoneTasks={handleClearDoneTasks} />
         </StyledMain>
     )
 }

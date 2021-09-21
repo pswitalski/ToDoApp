@@ -11,6 +11,7 @@ export const StyledTask = styled.div`
 
 export const StyledP = styled.p`
     height: 40px;
+    flex-basis: 40%;
     line-height: 40px;
     flex-grow: 1;
     text-align: center;

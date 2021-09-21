@@ -11,7 +11,7 @@ export const StyledButton = styled.button`
     text-transform: uppercase;
     letter-spacing: 1.4px;
     cursor: pointer;
-    margin: 5px;
+    margin: ${props => props.bottom ? 'auto auto 5px auto' : '5px'};
     outline: none;
 
     &:focus {

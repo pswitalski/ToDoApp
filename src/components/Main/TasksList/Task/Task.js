@@ -4,10 +4,14 @@ import { StyledTask, StyledP, StyledButton } from "./Task.style";
 import { faTrash, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Task({taskId, task, category, date, handleDeleteTask, darkTheme}) {
+function Task({taskId, task, category, date, handleDeleteTask, darkTheme, handleMoveTaskToDone}) {
 
     const handleDelete = () => {
         handleDeleteTask(taskId);
+    }
+
+    const handleMoveTask = () => {
+        handleMoveTaskToDone(taskId)
     }
 
     return(
@@ -15,7 +19,7 @@ function Task({taskId, task, category, date, handleDeleteTask, darkTheme}) {
             <StyledP>{task}</StyledP>
             <StyledP>{category}</StyledP>
             <StyledP>{date}</StyledP>
-            <StyledButton>
+            <StyledButton onClick={handleMoveTask} >
                 <FontAwesomeIcon icon={faCheck} color={darkTheme ? 'red' : 'green'} />
             </StyledButton>
             <StyledButton onClick={handleDelete} >

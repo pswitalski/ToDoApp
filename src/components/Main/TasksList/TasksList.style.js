@@ -4,6 +4,7 @@ export const StyledTasksList = styled.div`
     display: flex;
     flex-direction: column;
     border-left: 1px solid gray;
+    padding: 5px;
 `;
 
 export const StyledP = styled.p`
