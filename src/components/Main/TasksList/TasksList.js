@@ -2,12 +2,15 @@ import React from "react";
 import { StyledTasksList } from "./TasksList.style";
 import Task from "./Task/Task";
 
-function TasksList() {
+function TasksList({tasksList, handleDeleteTask}) {
+
+    const generateTasks = tasksList.map((task) => (
+        <Task key={task.taskId} taskId={task.taskId} task={task.task} category={task.category} date={task.date} handleDeleteTask={handleDeleteTask} />
+    ))
+
     return(
         <StyledTasksList>
-            <Task />
-            <Task />
-            <Task />
+            {generateTasks}
         </StyledTasksList>
     )
 }

@@ -6,12 +6,12 @@ import Logo from "./Logo/Logo";
 import Controls from "./Controls/Controls";
 import SearchBar from "./SearchBar/SearchBar";
 
-function Header() {
+function Header({handleToggleTaskOpen, handleAddTaskClose}) {
     return(
         <StyledHeader>
             <Logo />
             <SearchBar />
-            <Controls />
+            <Controls handleToggleTaskOpen={handleToggleTaskOpen} handleAddTaskClose={handleAddTaskClose} />
         </StyledHeader>
     )
 }

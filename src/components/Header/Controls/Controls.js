@@ -3,11 +3,12 @@ import { StyledControls } from "./Controls.style";
 
 import ControlButton from "./ControlButton/ControlButton";
 
-function Controls() {
+function Controls({handleToggleTaskOpen, handleAddTaskClose}) {
+
     return(
         <StyledControls>
-                <ControlButton settings />
-                <ControlButton add />
+                <ControlButton settings onClick={handleAddTaskClose} />
+                <ControlButton add onClick={handleToggleTaskOpen} />
         </StyledControls>
     )
 }

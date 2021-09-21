@@ -8,7 +8,7 @@ export const StyledSearchBar = styled.div`
     border-radius: 10px;
     display: flex;
     align-items: center;
-    box-shadow: ${props => props.isActive ? " 0 0 5px 1px grey": "none"};
+    box-shadow: ${props => props.isActive ? "0 0 5px 1px grey": "none"};
     transition: background-color .3s linear;
 `;
 
