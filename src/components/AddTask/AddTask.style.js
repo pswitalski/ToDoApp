@@ -5,7 +5,7 @@ export const StyledAddTask = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: ${props => props.darkTheme ? '#333' : 'white'};
     right: 30px;
     top: 70px;
     width: 340px;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyledAddTask, StyledH2, StyledInput, StyledLabel } from "./AddTask.style";
 import Button from "../Button/Button";
 
-function AddTask({handleAddTaskClose, handleAddNewTask, nextTaskId}) {
+function AddTask({handleAddTaskClose, handleAddNewTask, nextTaskId, darkTheme}) {
     const [task, setTask] = useState('');
     const [category, setCategory] = useState('');
     const [date, setDate] = useState('');
@@ -34,7 +34,7 @@ function AddTask({handleAddTaskClose, handleAddNewTask, nextTaskId}) {
     }
 
     return(
-        <StyledAddTask onSubmit={handleAddTask} >
+        <StyledAddTask onSubmit={handleAddTask} darkTheme={darkTheme} >
             <StyledH2>Add new task</StyledH2>
             <StyledLabel htmlFor="task" >Task:</StyledLabel>
             <StyledInput id="task" required value={task} onChange={handleTaskInputChange} />

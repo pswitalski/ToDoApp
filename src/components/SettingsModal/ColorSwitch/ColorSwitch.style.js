@@ -46,4 +46,5 @@ export const StyledP = styled.p`
     line-height: 50px;
     width: 100%;
     text-align: center;
+    color: black;
 `;

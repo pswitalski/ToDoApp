@@ -6,7 +6,8 @@ export const StyledSettingsModal = styled.div`
     top: 70px;
     width: 340px;
     height: fit-content;
-    background-color: green;
+    background-color: white;
+    background-color: ${props => props.darkTheme ? '#333' : 'white'};
     display: flex;
     flex-direction: column;
     align-items: center;

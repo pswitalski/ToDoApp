@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { StyledApp } from "./App.style";
 
 import GlobalStyle from "../../styles/GlobalStyle";
 import AddTask from "../AddTask/AddTask";
@@ -49,15 +50,15 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <StyledApp className="App" darkTheme={darkTheme} >
       <GlobalStyle />
         <Header handleToggleTaskOpen={handleToggleTaskOpen} handleAddTaskClose={handleAddTaskClose} handleSettingsOpen={handleSettingsOpen} handleSettingsClose={handleSettingsClose} />
         <Main tasksList={tasksList} handleDeleteTask={handleDeleteTask} />
 
-        {addTaskOpen ? <AddTask nextTaskId={nextTaskId} handleAddTaskClose={handleAddTaskClose} handleAddNewTask={handleAddNewTask} /> : null}
+        {addTaskOpen ? <AddTask nextTaskId={nextTaskId} handleAddTaskClose={handleAddTaskClose} handleAddNewTask={handleAddNewTask} darkTheme={darkTheme} /> : null}
 
         {settingsModalOpen ? <SettingsModal darkTheme={darkTheme} setDarkTheme={setDarkTheme} handleSettingsClose={handleSettingsClose} /> : null}
-    </div>
+    </StyledApp>
   );
 }
 

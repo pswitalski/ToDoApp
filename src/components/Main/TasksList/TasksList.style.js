@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const StyledTasksList = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: pink;
-
+    border-left: 1px solid gray;
 `;
 
 export const StyledP = styled.p`

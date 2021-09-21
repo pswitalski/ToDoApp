@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
 
     .App {
         min-height: 100vh;
+        transition: color 0.2s linear;
     }
 `;
 

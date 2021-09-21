@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 
 function SettingsModal({darkTheme, setDarkTheme, handleSettingsClose}) {
     return(
-        <StyledSettingsModal>
+        <StyledSettingsModal darkTheme={darkTheme} >
             <StyledH2>Change colors theme:</StyledH2>
             <ColorSwitch darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
             <Button secondary  text="close" onClick={handleSettingsClose} />

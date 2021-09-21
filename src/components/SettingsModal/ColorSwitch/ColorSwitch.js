@@ -7,7 +7,6 @@ function ColorSwitch({darkTheme, setDarkTheme}) {
         setDarkTheme(!darkTheme);
     }
 
-
     return(
         <StyledColorSwitch onClick={handleThemeChange} >
             <StyledLeftContainer>
