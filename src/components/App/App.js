@@ -5,10 +5,13 @@ import AddTask from "../AddTask/AddTask";
 
 import Header from "../Header/Header";
 import Main from "../Main/Main";
+import SettingsModal from "../SettingsModal/SettingsModal";
 
 function App() {
 
+  const [darkTheme, setDarkTheme] = useState(false);
   const [addTaskOpen, setAddTaskOpen] = useState(false);
+  const [settingsModalOpen, setSettingsModalOpen] = useState(false);
 
   const handleToggleTaskOpen = () => {
     setAddTaskOpen(!addTaskOpen);
@@ -37,13 +40,23 @@ function App() {
     setTasksList(newTasksList);
   }
 
+  const handleSettingsOpen = () => {
+    setSettingsModalOpen(!settingsModalOpen);
+  }
+
+  const handleSettingsClose = () => {
+    setSettingsModalOpen(false);
+  }
+
   return (
     <div className="App">
       <GlobalStyle />
-        <Header handleToggleTaskOpen={handleToggleTaskOpen} handleAddTaskClose={handleAddTaskClose} />
+        <Header handleToggleTaskOpen={handleToggleTaskOpen} handleAddTaskClose={handleAddTaskClose} handleSettingsOpen={handleSettingsOpen} handleSettingsClose={handleSettingsClose} />
         <Main tasksList={tasksList} handleDeleteTask={handleDeleteTask} />
 
         {addTaskOpen ? <AddTask nextTaskId={nextTaskId} handleAddTaskClose={handleAddTaskClose} handleAddNewTask={handleAddNewTask} /> : null}
+
+        {settingsModalOpen ? <SettingsModal darkTheme={darkTheme} setDarkTheme={setDarkTheme} handleSettingsClose={handleSettingsClose} /> : null}
     </div>
   );
 }

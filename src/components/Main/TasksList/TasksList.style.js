@@ -8,5 +8,5 @@ export const StyledTasksList = styled.div`
 `;
 
 export const StyledP = styled.p`
-    margin: 5px auto;
+    margin: 10px auto;
 `;

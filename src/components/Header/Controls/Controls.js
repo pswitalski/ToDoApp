@@ -3,12 +3,22 @@ import { StyledControls } from "./Controls.style";
 
 import ControlButton from "./ControlButton/ControlButton";
 
-function Controls({handleToggleTaskOpen, handleAddTaskClose}) {
+function Controls({handleToggleTaskOpen, handleAddTaskClose, handleSettingsOpen, handleSettingsClose}) {
+
+    const handleSettings = () => {
+        handleAddTaskClose();
+        handleSettingsOpen();
+    }
+
+    const handleAddTask = () => {
+        handleSettingsClose();
+        handleToggleTaskOpen();
+    }
 
     return(
         <StyledControls>
-                <ControlButton settings onClick={handleAddTaskClose} />
-                <ControlButton add onClick={handleToggleTaskOpen} />
+                <ControlButton settings onClick={handleSettings} />
+                <ControlButton add onClick={handleAddTask} />
         </StyledControls>
     )
 }
