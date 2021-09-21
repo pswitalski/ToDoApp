@@ -9,3 +9,7 @@ export const StyledTasksList = styled.div`
 export const StyledP = styled.p`
     margin: 10px auto;
 `;
+
+export const StyledH2 = styled.h2`
+    margin: 5px;
+`;
