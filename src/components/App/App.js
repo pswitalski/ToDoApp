@@ -52,7 +52,7 @@ function App() {
   return (
     <StyledApp className="App" darkTheme={darkTheme} >
       <GlobalStyle />
-        <Header handleToggleTaskOpen={handleToggleTaskOpen} handleAddTaskClose={handleAddTaskClose} handleSettingsOpen={handleSettingsOpen} handleSettingsClose={handleSettingsClose} />
+        <Header handleToggleTaskOpen={handleToggleTaskOpen} handleAddTaskClose={handleAddTaskClose} handleSettingsOpen={handleSettingsOpen} handleSettingsClose={handleSettingsClose} darkTheme={darkTheme} />
         <Main tasksList={tasksList} handleDeleteTask={handleDeleteTask} />
 
         {addTaskOpen ? <AddTask nextTaskId={nextTaskId} handleAddTaskClose={handleAddTaskClose} handleAddNewTask={handleAddNewTask} darkTheme={darkTheme} /> : null}
