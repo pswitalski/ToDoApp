@@ -5,4 +5,8 @@ export const StyledMain = styled.main`
     grid-template-columns: 1fr 250px;
     grid-template-rows: auto;
     height: calc(100vh - 50px);
+
+    @media(max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
 `;

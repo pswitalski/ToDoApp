@@ -14,6 +14,12 @@ export const StyledSettingsModal = styled.div`
     box-shadow: 0 0 5px 1px grey;
     border-radius: 10px;
     padding: 10px;
+
+
+    @media(max-width: 600px) {
+        left: 50%;
+        transform: translateX(-50%);
+    }
 `;
 
 export const StyledH2 = styled.h2`
