@@ -6,3 +6,7 @@ export const StyledTasksList = styled.div`
     background-color: pink;
 
 `;
+
+export const StyledP = styled.p`
+    margin: 5px auto;
+`;
