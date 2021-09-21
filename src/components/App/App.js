@@ -67,11 +67,27 @@ function App() {
     setTasksList([]);
   }
 
+  const [filteredTasksList, setFilteredTasksList] = useState([]);
+
+  const handleSearch = (inputValue) => {
+
+    if (inputValue !== '') {
+      const currentTasksList = [...tasksList];
+      const filteredTasksList = currentTasksList.filter(task => (
+      task.task.includes(inputValue)
+      ))
+      setFilteredTasksList(filteredTasksList);
+    } else {
+      setFilteredTasksList([]);
+    }
+  }
+
   return (
     <StyledApp className="App" darkTheme={darkTheme} >
       <GlobalStyle />
-        <Header handleToggleTaskOpen={handleToggleTaskOpen} handleAddTaskClose={handleAddTaskClose} handleSettingsOpen={handleSettingsOpen} handleSettingsClose={handleSettingsClose} darkTheme={darkTheme} />
-        <Main tasksList={tasksList} handleDeleteTask={handleDeleteTask} darkTheme={darkTheme} doneTasks={doneTasks} handleMoveTaskToDone={handleMoveTaskToDone} handleClearDoneTasks={handleClearDoneTasks} handleClearTasksList={handleClearTasksList} />
+        <Header handleToggleTaskOpen={handleToggleTaskOpen} handleAddTaskClose={handleAddTaskClose} handleSettingsOpen={handleSettingsOpen} handleSettingsClose={handleSettingsClose} darkTheme={darkTheme} handleSearch={handleSearch} />
+
+        <Main tasksList={filteredTasksList.length ? filteredTasksList : tasksList} handleDeleteTask={handleDeleteTask} darkTheme={darkTheme} doneTasks={doneTasks} handleMoveTaskToDone={handleMoveTaskToDone} handleClearDoneTasks={handleClearDoneTasks} handleClearTasksList={handleClearTasksList} />
 
         {addTaskOpen ? <AddTask nextTaskId={nextTaskId} handleAddTaskClose={handleAddTaskClose} handleAddNewTask={handleAddNewTask} darkTheme={darkTheme} /> : null}
 
