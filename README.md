@@ -2,6 +2,10 @@
 
 Simple To Do App created with React and Styled Components.
 
+## Live preview:
+
+https://todoapp-react-styledcomponents.netlify.app/
+
 ## Technologies:
 
 <ul>
