@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { StyledSearchBar, StyledButton, StyledInput } from "./SearchBar.style";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,12 +23,18 @@ function SearchBar({handleSearch}) {
         handleSearch(e.target.value);
     }
 
+    const inputElement = useRef();
+
+    const handleSearchButton = () => {
+        inputElement.current.focus();
+    }
+
     return(
         <StyledSearchBar isActive={isActive} >
-            <StyledButton isActive={isActive} >
+            <StyledButton onClick={handleSearchButton} isActive={isActive} >
                 <FontAwesomeIcon icon={faSearch} size="lg" />
             </StyledButton>
-            <StyledInput value={inputValue} onChange={handleInputChange} isActive={isActive} onBlur={handleInputBlur} onFocus={handleInputFocus} placeholder="Search task..." ></StyledInput>
+            <StyledInput ref={inputElement} value={inputValue} onChange={handleInputChange} isActive={isActive} onBlur={handleInputBlur} onFocus={handleInputFocus} placeholder="Search task..." ></StyledInput>
         </StyledSearchBar>
     )
 }
